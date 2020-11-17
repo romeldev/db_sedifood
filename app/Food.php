@@ -61,9 +61,9 @@ class Food extends Model
     ];
 
 
-    public function factorUnits()
+    public function foodUnits()
     {
-        return $this->hasMany(FactorUnit::class);
+        return $this->hasMany(FoodUnit::class);
     }
 
 }

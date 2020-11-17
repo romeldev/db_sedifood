@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UnitType extends Model
+class Unit extends Model
 {
     protected $fillable = [ 'id', 'descrip' ];
 

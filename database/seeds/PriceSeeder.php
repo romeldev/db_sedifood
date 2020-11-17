@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Price;
 use App\Company;
 use App\Food;
-use App\FactorUnit;
+use App\Factor;
 
 class PriceSeeder extends Seeder
 {

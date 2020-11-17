@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\UnitType;
+use App\Unit;
 
-class UnitTypeSeeder extends Seeder
+class UnitSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +12,9 @@ class UnitTypeSeeder extends Seeder
      */
     public function run()
     {
-        // factory(App\UnitType::class, 3)->create();
-        UnitType::query()->delete();
-        UnitType::insert($this->data());
+        // factory(Unit::class, 3)->create();
+        Unit::query()->delete();
+        Unit::insert($this->data());
     }
 
     public function data()

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\UnitTypes;
+use App\FoodUnit;
 use Illuminate\Http\Request;
 
-class UnitTypesController extends Controller
+class FoodUnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class UnitTypesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\UnitTypes  $unitTypes
+     * @param  \App\FoodUnit  $foodUnit
      * @return \Illuminate\Http\Response
      */
-    public function show(UnitTypes $unitTypes)
+    public function show(FoodUnit $foodUnit)
     {
         //
     }
@@ -52,10 +52,10 @@ class UnitTypesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\UnitTypes  $unitTypes
+     * @param  \App\FoodUnit  $foodUnit
      * @return \Illuminate\Http\Response
      */
-    public function edit(UnitTypes $unitTypes)
+    public function edit(FoodUnit $foodUnit)
     {
         //
     }
@@ -64,10 +64,10 @@ class UnitTypesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UnitTypes  $unitTypes
+     * @param  \App\FoodUnit  $foodUnit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UnitTypes $unitTypes)
+    public function update(Request $request, FoodUnit $foodUnit)
     {
         //
     }
@@ -75,10 +75,10 @@ class UnitTypesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\UnitTypes  $unitTypes
+     * @param  \App\FoodUnit  $foodUnit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UnitTypes $unitTypes)
+    public function destroy(FoodUnit $foodUnit)
     {
         //
     }

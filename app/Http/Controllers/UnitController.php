@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\FactorUnit;
+use App\Unit;
 use Illuminate\Http\Request;
 
-class FactorUnitController extends Controller
+class UnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class FactorUnitController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\FactorUnit  $factorUnit
+     * @param  \App\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function show(FactorUnit $factorUnit)
+    public function show(Unit $unit)
     {
         //
     }
@@ -52,10 +52,10 @@ class FactorUnitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\FactorUnit  $factorUnit
+     * @param  \App\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function edit(FactorUnit $factorUnit)
+    public function edit(Unit $unit)
     {
         //
     }
@@ -64,10 +64,10 @@ class FactorUnitController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\FactorUnit  $factorUnit
+     * @param  \App\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FactorUnit $factorUnit)
+    public function update(Request $request, Unit $unit)
     {
         //
     }
@@ -75,10 +75,10 @@ class FactorUnitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\FactorUnit  $factorUnit
+     * @param  \App\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FactorUnit $factorUnit)
+    public function destroy(Unit $unit)
     {
         //
     }

@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory;
+use App\FoodUnit;
 
-class FactorUnitSeeder extends Seeder
+class FoodUnitSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +13,8 @@ class FactorUnitSeeder extends Seeder
      */
     public function run()
     {
-        App\FactorUnit::insert( $this->data() );
+        FoodUnit::query()->delete();
+        FoodUnit::insert( $this->data() );
     }
 
     public function data()
@@ -20,14 +22,15 @@ class FactorUnitSeeder extends Seeder
         $faker = Factory::create();
         $data = [];
         $foods = App\Food::all();
-        $units = App\UnitType::all();
+        $units = App\Unit::all();
+
         foreach($foods as $food)
         {
             foreach($units as $unit)
             {
                 $data[] = [
                     'food_id' => $food->id,
-                    'unit_type_id' => $unit->id,
+                    'unit_id' => $unit->id,
                     'descrip' => strtoupper($faker->words(1, true)),
                     'factor' => rand(1, 1000),
                 ];

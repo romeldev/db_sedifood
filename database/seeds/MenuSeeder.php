@@ -63,14 +63,14 @@ class MenuSeeder extends Seeder
                         'order' => 2,
                         'label' => 'Tipo de Regimen',
                         'icon' => 'menu_item',
-                        'view' => 'RegimenTypeView',
+                        'view' => 'RegimeView',
                         'menu_id' => null,
                     ],
                     [
                         'order' => 3,
                         'label' => 'Tipo de Alimento',
                         'icon' => 'menu_item',
-                        'view' => 'IngredientTypeView',
+                        'view' => 'FoodGroupView',
                         'menu_id' => null,
                     ],
                     [
@@ -91,7 +91,7 @@ class MenuSeeder extends Seeder
                         'order' => 6,
                         'label' => 'Tipo de Moneda',
                         'icon' => 'menu_item',
-                        'view' => 'CurrencyTypeView',
+                        'view' => 'CurrencyView',
                         'menu_id' => null,
                     ],
                     [
@@ -121,23 +121,16 @@ class MenuSeeder extends Seeder
                 'items' => [
                     [
                         'order' => 1,
-                        'label' => 'Composicion Nutricional',
+                        'label' => 'Alimentos',
                         'icon' => 'menu_item',
-                        'view' => 'NutritionalCompositionView',
+                        'view' => 'FoodView',
                         'menu_id' => null,
                     ],
                     [
                         'order' => 2,
-                        'label' => 'Factor de Conversion',
+                        'label' => 'Precios',
                         'icon' => 'menu_item',
-                        'view' => 'ConversionFactorView',
-                        'menu_id' => null,
-                    ],
-                    [
-                        'order' => 3,
-                        'label' => 'Actualizacion de Precios',
-                        'icon' => 'menu_item',
-                        'view' => 'PriceUpdateView',
+                        'view' => 'PriceView',
                         'menu_id' => null,
                     ],
                 ],

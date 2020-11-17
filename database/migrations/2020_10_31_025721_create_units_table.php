@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUnitTypesTable extends Migration
+class CreateUnitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUnitTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('unit_types', function (Blueprint $table) {
+        Schema::create('units', function (Blueprint $table) {
             $table->id();
             $table->string('descrip');
             $table->softDeletes();
@@ -27,6 +27,6 @@ class CreateUnitTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unit_types');
+        Schema::dropIfExists('units');
     }
 }

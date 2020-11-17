@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\UnitType;
+use App\Unit;
 use Faker\Generator as Faker;
 
-$factory->define(UnitType::class, function (Faker $faker) {
+$factory->define(Unit::class, function (Faker $faker) {
     return [
         'descrip' => strtoupper($faker->words(1, true)),
     ];
