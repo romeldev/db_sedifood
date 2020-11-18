@@ -154,7 +154,7 @@ class MenuSeeder extends Seeder
                         'order' => 2,
                         'label' => 'Programacion',
                         'icon' => 'menu_item',
-                        'view' => 'ProgramationView',
+                        'view' => 'ProgrammingView',
                         'menu_id' => null,
                     ],
                 ],
@@ -166,6 +166,22 @@ class MenuSeeder extends Seeder
                 'icon' => 'menu_cost',
                 'view' => null,
                 'menu_id' => null,
+                'items' => [
+                    [
+                        'order' => 1,
+                        'label' => 'Contenido Nutricional',
+                        'icon' => 'menu_item',
+                        'view' => 'PreparationView',
+                        'menu_id' => null,
+                    ],
+                    [
+                        'order' => 2,
+                        'label' => 'Programacion',
+                        'icon' => 'menu_item',
+                        'view' => 'ProgrammingView',
+                        'menu_id' => null,
+                    ],
+                ],
             ],
             // Orden de Compra
             [ 
@@ -182,6 +198,15 @@ class MenuSeeder extends Seeder
                 'icon' => 'menu_statistics',
                 'view' => null,
                 'menu_id' => null,
+                'items' => [
+                    [
+                        'order' => 1,
+                        'label' => 'Contenido Nutricional',
+                        'icon' => 'menu_item',
+                        'view' => 'NutritionalContentView',
+                        'menu_id' => null,
+                    ],
+                ],
             ],
         ];
 

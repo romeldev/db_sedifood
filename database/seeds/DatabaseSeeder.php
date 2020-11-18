@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
         $this->call(NutrientSeeder::class);
         $this->call(PreparationSeeder::class);
         $this->call(PreparationDetailSeeder::class);
-        // $this->call(ProgrammingSeeder::class);
-        // $this->call(ProgrammingDetailSeeder::class);
+        $this->call(ProgrammingSeeder::class);
+        $this->call(ProgrammingDetailSeeder::class);
         $this->call(PriceSeeder::class);
     }
 }
