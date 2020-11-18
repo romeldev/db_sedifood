@@ -17,7 +17,7 @@ class CreatePricesTable extends Migration
             $table->id();
             $table->foreignId('company_id')->constrained('companies');
             $table->foreignId('food_id')->constrained('foods');
-            $table->foreignId('food_unit_id')->constrained('food_units');
+            $table->foreignId('unit_id')->constrained('units');
             $table->foreignId('currency_id')->constrained('currencies');
             $table->decimal('price');
             $table->softDeletes();

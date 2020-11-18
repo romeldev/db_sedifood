@@ -121,7 +121,7 @@ class MenuSeeder extends Seeder
                 'items' => [
                     [
                         'order' => 1,
-                        'label' => 'Alimentos',
+                        'label' => 'Unidades y Nutrientes',
                         'icon' => 'menu_item',
                         'view' => 'FoodView',
                         'menu_id' => null,

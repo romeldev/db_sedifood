@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Price;
 use App\Company;
 use App\Food;
-use App\Factor;
+use App\Unit;
 
 class PriceSeeder extends Seeder
 {
@@ -16,32 +16,25 @@ class PriceSeeder extends Seeder
     public function run()
     {
         Price::query()->delete();
-
         $datas = collect($this->data());
-
         foreach($datas->chunk(1000) as $data){
             Price::insert( $data->toArray() );
         }
-        
     }
 
     public function data(){
-        $min=1; $max=5;
+        $min=5; $max=20;
         $data = [];
         $companies = Company::all();
-        $factorUnits = FactorUnit::all();
-
+        $units = Unit::all();
         $foods = Food::all();
-
-        $countFood = [];
         foreach($companies as $company){
             foreach($foods as $food){
-                $myFactorUnits = $factorUnits->where('food_id', $food->id);
-                foreach($myFactorUnits as $factorUnit){
+                foreach($units as $unit){
                     $data[] = [
                         'company_id' => $company->id,
                         'food_id' => $food->id,
-                        'factor_unit_id' => $factorUnit->id,
+                        'unit_id' => $unit->id,
                         'currency_id' => 1,
                         'price' => rand($min*10, $max*10)/10,
                     ];

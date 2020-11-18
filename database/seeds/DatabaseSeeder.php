@@ -24,10 +24,10 @@ class DatabaseSeeder extends Seeder
         $this->call(FoodSeeder::class);
         $this->call(FoodUnitSeeder::class);
         $this->call(NutrientSeeder::class);
-        // $this->call(PreparationSeeder::class);
-        // $this->call(PreparationDetailSeeder::class);
+        $this->call(PreparationSeeder::class);
+        $this->call(PreparationDetailSeeder::class);
         // $this->call(ProgrammingSeeder::class);
         // $this->call(ProgrammingDetailSeeder::class);
-        // $this->call(PriceSeeder::class);
+        $this->call(PriceSeeder::class);
     }
 }

@@ -16,6 +16,9 @@ class CreateUnitsTable extends Migration
         Schema::create('units', function (Blueprint $table) {
             $table->id();
             $table->string('descrip');
+            $table->string('name')->nullable();
+            $table->string('type')->nullable(); //masa, volumne
+            $table->decimal('value')->nullable();
             $table->softDeletes();
         });
     }
