@@ -24,6 +24,8 @@ class FoodUnitSeeder extends Seeder
         $foods = App\Food::all();
         $units = App\Unit::all();
 
+        $factors = [1, 1000, 50000 ];
+
         foreach($foods as $food)
         {
             foreach($units as $unit)
@@ -32,7 +34,7 @@ class FoodUnitSeeder extends Seeder
                     'food_id' => $food->id,
                     'unit_id' => $unit->id,
                     'descrip' => strtoupper($faker->words(1, true)),
-                    'factor' => rand(1, 1000),
+                    'factor' => $factors[$unit->id-1],
                 ];
             }
         }

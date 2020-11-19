@@ -29,7 +29,7 @@ class PreparationDetailSeeder extends Seeder
                 $item = [];
                 $item['preparation_id'] = $preparation->id;
                 $item['food_id'] = $food->id;
-                $item['unit_id'] = 1;
+                $item['unit_id'] = rand(1,3);
                 $item['amount'] = rand(1, 10);
                 $data[] = $item;
             }

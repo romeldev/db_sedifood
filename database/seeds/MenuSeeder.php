@@ -190,6 +190,29 @@ class MenuSeeder extends Seeder
                 'icon' => 'menu_order_buy',
                 'view' => null,
                 'menu_id' => null,
+                'items' => [
+                    [
+                        'order' => 1,
+                        'label' => 'Reporte Detallado',
+                        'icon' => 'menu_item',
+                        'view' => 'OrderDetailView',
+                        'menu_id' => null,
+                    ],
+                    [
+                        'order' => 2,
+                        'label' => 'Reporte Consolidado',
+                        'icon' => 'menu_item',
+                        'view' => 'OrderConsolidedView',
+                        'menu_id' => null,
+                    ],
+                    [
+                        'order' => 3,
+                        'label' => 'Reporte Stock',
+                        'icon' => 'menu_item',
+                        'view' => 'OrderStockView',
+                        'menu_id' => null,
+                    ],
+                ],
             ],
             // Estadisticas y AN
             [ 
@@ -204,6 +227,13 @@ class MenuSeeder extends Seeder
                         'label' => 'Contenido Nutricional',
                         'icon' => 'menu_item',
                         'view' => 'NutritionalContentView',
+                        'menu_id' => null,
+                    ],
+                    [
+                        'order' => 2,
+                        'label' => 'Preparaciones',
+                        'icon' => 'menu_item',
+                        'view' => 'NCPreparationView',
                         'menu_id' => null,
                     ],
                 ],
