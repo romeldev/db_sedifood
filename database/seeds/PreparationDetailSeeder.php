@@ -13,6 +13,7 @@ class PreparationDetailSeeder extends Seeder
      */
     public function run()
     {
+        PreparationDetail::query()->delete();
         PreparationDetail::insert($this->data());
     }
 
@@ -24,12 +25,12 @@ class PreparationDetailSeeder extends Seeder
         $foods = Food::all();
         foreach($preparations as $preparation)
         {
-            $myFoods = $foods->random(rand(2, 5));
+            $myFoods = $foods->random(rand(1, 2));
             foreach($myFoods as $food){
                 $item = [];
                 $item['preparation_id'] = $preparation->id;
                 $item['food_id'] = $food->id;
-                $item['unit_id'] = rand(1,3);
+                $item['unit_id'] = rand(2,3);
                 $item['amount'] = rand(1, 10);
                 $data[] = $item;
             }

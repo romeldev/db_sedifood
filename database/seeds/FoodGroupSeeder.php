@@ -37,8 +37,6 @@ class FoodGroupSeeder extends Seeder
             [ 'id' => 15, 'abrev' => 'U' , 'descrip' => 'TUBÉRCULOS Y RAICES' ],
             [ 'id' => 16, 'abrev' => 'V' , 'descrip' => 'TUBÉRCULOS ANDINOS' ],
             [ 'id' => 17, 'abrev' => 'X' , 'descrip' => 'FORMULAS ENTERALES' ],
-            [ 'id' => 1018, 'abrev' => 'y' , 'descrip' => 'DESCONOCIDO 1' ],
-            [ 'id' => 1019, 'abrev' => 'Z' , 'descrip' => 'DESCONOCIDO 2' ],
         ];
     }
 }
