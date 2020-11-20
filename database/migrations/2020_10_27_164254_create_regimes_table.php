@@ -13,10 +13,12 @@ class CreateRegimesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('regimes');
+
         Schema::create('regimes', function (Blueprint $table) {
             $table->id();
             $table->string('descrip');
-            $table->foreignId('company_id')->constrained('companies');
+            $table->foreignId('company_id');
             $table->softDeletes();
         });
     }

@@ -17,7 +17,7 @@ class CreateFoodUnitsTable extends Migration
             $table->id();
             $table->string('descrip');
             $table->decimal('factor');
-            $table->foreignId('food_id')->constrained('foods');
+            $table->foreignId('food_id');
             $table->foreignId('unit_id')->constrained('units');
             $table->softDeletes();
         });

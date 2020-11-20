@@ -17,7 +17,7 @@ class CreatePreparationDetailsTable extends Migration
             $table->id();
             $table->decimal('amount');
             $table->foreignId('preparation_id')->constrained('preparations');
-            $table->foreignId('food_id')->constrained('foods');
+            $table->foreignId('food_id');
             $table->foreignId('unit_id')->constrained('units');
             $table->softDeletes();
         });

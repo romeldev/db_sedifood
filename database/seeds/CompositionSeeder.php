@@ -12,7 +12,7 @@ class CompositionSeeder extends Seeder
      */
     public function run()
     {
-        // factory(App\Composition::Class, 10)->create();
+        // factory(Composition::Class, 10)->create();
         Composition::query()->delete();
         Composition::insert($this->data());
     }

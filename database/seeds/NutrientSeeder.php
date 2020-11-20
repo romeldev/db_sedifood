@@ -13,7 +13,7 @@ class NutrientSeeder extends Seeder
      */
     public function run()
     {
-        App\Nutrient::insert($this->data());
+        Nutrient::insert($this->data());
     }
 
     public function data()
@@ -31,9 +31,7 @@ class NutrientSeeder extends Seeder
             $semilla = 1;
             foreach($nutrients as $column)
             {
-                // $item[$column] = rand((int)$semilla, (int)($semilla*10));
-                // $semilla = $semilla*10;
-                $item[$column] = rand(10, 100);
+                $item[$column] = rand(10, 80);
             }
             $data[] = $item;
         }

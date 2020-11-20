@@ -15,7 +15,7 @@ class CreateNutrientsTable extends Migration
     {
         Schema::create('nutrients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('food_id')->constrained('foods');;
+            $table->foreignId('food_id');
             $table->decimal('net_weight')->nullable(); //8, 16
             $table->decimal('grams')->nullable();
             $table->decimal('energy_kcal')->nullable();
