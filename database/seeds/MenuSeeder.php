@@ -126,13 +126,6 @@ class MenuSeeder extends Seeder
                         'view' => 'FoodView',
                         'menu_id' => null,
                     ],
-                    [
-                        'order' => 2,
-                        'label' => 'Precios',
-                        'icon' => 'menu_item',
-                        'view' => 'PriceView',
-                        'menu_id' => null,
-                    ],
                 ],
             ],
             // Programacion de Menu

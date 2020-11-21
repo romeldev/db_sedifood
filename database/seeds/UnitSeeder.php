@@ -22,9 +22,10 @@ class UnitSeeder extends Seeder
         return [
             [ 'id' => '1', 'abrev' => 'u',  'name' => 'UNIDAD', 'factor' => '1', 'type' => '1', 'forever' => '1' ],
             [ 'id' => '2', 'abrev' => 'g',  'name' => 'GRAMOS', 'factor' => '1', 'type' => '2', 'forever' => '1' ],
-            [ 'id' => '3', 'abrev' => 'kg',  'name' => 'KILOS', 'factor' => '1000', 'type' => '2', 'forever' => '1' ],
-            [ 'id' => '4', 'abrev' => 'ml',  'name' => 'MILILITROS', 'factor' => '1', 'type' => '3', 'forever' => '1' ],
+            [ 'id' => '3', 'abrev' => 'ml',  'name' => 'MILILITROS', 'factor' => '1', 'type' => '3', 'forever' => '1' ],
+            [ 'id' => '4', 'abrev' => 'kg',  'name' => 'KILOS', 'factor' => '1000', 'type' => '2', 'forever' => '1' ],
             [ 'id' => '5', 'abrev' => 'l',  'name' => 'LITRO', 'factor' => '1000', 'type' => '3', 'forever' => '1' ],
+            [ 'id' => '6', 'abrev' => 'Q',  'name' => 'QUINTAL', 'factor' => '50000', 'type' => '2', 'forever' => '1' ],
         ];
     }
 }
