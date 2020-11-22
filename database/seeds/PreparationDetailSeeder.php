@@ -2,6 +2,7 @@
 use App\Preparation;
 use App\PreparationDetail;
 use App\Food;
+use App\Unit;
 use Illuminate\Database\Seeder;
 
 class PreparationDetailSeeder extends Seeder
@@ -23,6 +24,7 @@ class PreparationDetailSeeder extends Seeder
         $preparations = Preparation::all();
 
         $foods = Food::all();
+        $units = Unit::all();
         foreach($preparations as $preparation)
         {
             $myFoods = $foods->random(rand(1, 2));
@@ -30,7 +32,7 @@ class PreparationDetailSeeder extends Seeder
                 $item = [];
                 $item['preparation_id'] = $preparation->id;
                 $item['food_id'] = $food->id;
-                $item['unit_id'] = rand(2,3);
+                $item['unit_id'] = $units->random(1)->first()->id;
                 $item['amount'] = rand(1, 10);
                 $data[] = $item;
             }

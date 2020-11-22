@@ -19,6 +19,14 @@ class CreateAssetsView extends Migration
         DB::statement("create or replace view foods as
         select id_insumo as id, nombre as descrip, 1 as food_group_id, if(estado=1,null, 0) as deleted_at from insumo");
 
+        DB::statement("drop function if exists three_rule;
+        create function three_rule(nut_grams decimal(9,3), nut_value decimal(9,3), food_amount decimal(9,3) )
+        returns decimal(9,3)
+        begin
+            declare result decimal(9,3) default 0;
+            set result = if(nut_grams=0 or nut_grams is null, 0, (nut_value*food_amount/nut_grams) );
+            return result;
+        end");
 
         DB::unprepared("drop function if exists unit_convert_to_min;
         create function unit_convert_to_min(current_value decimal(16,6), unit_from_id int)
