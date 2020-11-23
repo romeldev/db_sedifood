@@ -153,56 +153,42 @@ class MenuSeeder extends Seeder
                 ],
             ],
             // Gestion de Costo
-            [ 
-                'order' => 4,
-                'label' => 'Gestion de Costo',
-                'icon' => 'menu_cost',
-                'view' => null,
-                'menu_id' => null,
-                'items' => [
-                    [
-                        'order' => 1,
-                        'label' => 'Contenido Nutricional',
-                        'icon' => 'menu_item',
-                        'view' => 'PreparationView',
-                        'menu_id' => null,
-                    ],
-                    [
-                        'order' => 2,
-                        'label' => 'Programacion',
-                        'icon' => 'menu_item',
-                        'view' => 'ProgrammingView',
-                        'menu_id' => null,
-                    ],
-                ],
-            ],
+            // [ 
+            //     'order' => 4,
+            //     'label' => 'Gestion de Costo',
+            //     'icon' => 'menu_cost',
+            //     'view' => null,
+            //     'menu_id' => null,
+            //     'items' => [
+            //         [
+            //             'order' => 1,
+            //             'label' => 'Contenido Nutricional',
+            //             'icon' => 'menu_item',
+            //             'view' => 'PreparationView',
+            //             'menu_id' => null,
+            //         ],
+            //         [
+            //             'order' => 2,
+            //             'label' => 'Programacion',
+            //             'icon' => 'menu_item',
+            //             'view' => 'ProgrammingView',
+            //             'menu_id' => null,
+            //         ],
+            //     ],
+            // ],
             // Orden de Compra
             [ 
                 'order' => 5,
-                'label' => 'Orden de Compra',
+                'label' => 'Orden de pedido',
                 'icon' => 'menu_order_buy',
                 'view' => null,
                 'menu_id' => null,
                 'items' => [
                     [
                         'order' => 1,
-                        'label' => 'Reporte Detallado',
+                        'label' => 'Reporte de pedido',
                         'icon' => 'menu_item',
-                        'view' => 'OrderDetailView',
-                        'menu_id' => null,
-                    ],
-                    [
-                        'order' => 2,
-                        'label' => 'Reporte Consolidado',
-                        'icon' => 'menu_item',
-                        'view' => 'OrderConsolidedView',
-                        'menu_id' => null,
-                    ],
-                    [
-                        'order' => 3,
-                        'label' => 'Reporte Stock',
-                        'icon' => 'menu_item',
-                        'view' => 'OrderStockView',
+                        'view' => 'OrderView',
                         'menu_id' => null,
                     ],
                 ],

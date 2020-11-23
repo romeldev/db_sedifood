@@ -31,8 +31,9 @@ class PreparationDetailSeeder extends Seeder
             foreach($myFoods as $food){
                 $item = [];
                 $item['preparation_id'] = $preparation->id;
-                $item['food_id'] = $food->id;
-                $item['unit_id'] = $units->random(1)->first()->id;
+                $item['food_id'] = $food->id_insumo;
+                $item['unit_type'] = $food->unit_type;
+                $item['unit_id'] = $units->where('type', $food->unit_type)->random(1)->first()->id;
                 $item['amount'] = rand(1, 10);
                 $data[] = $item;
             }

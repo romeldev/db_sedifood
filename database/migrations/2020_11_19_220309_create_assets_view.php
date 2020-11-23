@@ -13,20 +13,25 @@ class CreateAssetsView extends Migration
      */
     public function up()
     {
+        DB::unprepared("
+        alter table insumo add column food_group_id int(20) not null default 1; // grupo varios
+        alter table insumo add column unit_type int(20) not null default 1; // unidad masa (gramos, kilogramos,...)
+        ");
+
         DB::statement("create or replace view companies as
         select id_almacen as id, nombre as descrip, IF(estado=1, NULL, 0) as deleted_at from almacen");
 
         DB::statement("create or replace view foods as
         select id_insumo as id, nombre as descrip, 1 as food_group_id, if(estado=1,null, 0) as deleted_at from insumo");
 
-        DB::statement("drop function if exists three_rule;
-        create function three_rule(nut_grams decimal(9,3), nut_value decimal(9,3), food_amount decimal(9,3) )
-        returns decimal(9,3)
+        DB::unprepared("drop function if exists three_rule;
+        create function three_rule(nut_grams decimal(16,6), nut_value decimal(16,6), food_amount decimal(16,6) )
+        returns decimal(16,6)
         begin
-            declare result decimal(9,3) default 0;
+            declare result decimal(16,6) default 0;
             set result = if(nut_grams=0 or nut_grams is null, 0, (nut_value*food_amount/nut_grams) );
             return result;
-        end");
+        end;");
 
         DB::unprepared("drop function if exists unit_convert_to_min;
         create function unit_convert_to_min(current_value decimal(16,6), unit_from_id int)

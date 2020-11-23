@@ -26,7 +26,7 @@ class NutrientSeeder extends Seeder
             $item['net_weight'] = 100;
             
             $item['grams'] = 100;
-            $item['food_id'] = $food->id;
+            $item['food_id'] = $food->id_insumo;
 
             $semilla = 1;
             foreach($nutrients as $column)

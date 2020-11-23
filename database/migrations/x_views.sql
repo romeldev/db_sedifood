@@ -1,40 +1,44 @@
 -- select * from companies
 create or replace view companies as
 select id_almacen as id, nombre as descrip, IF(estado=1, NULL, 0) as deleted_at from almacen;
+-- ------------------------------------------------------------------------------------------------------------
 
 -- select * from foods
 create or replace view foods as
 select id_insumo as id, nombre as descrip, 1 as food_group_id, if(estado=1,null, 0) as deleted_at from insumo;
+-- ------------------------------------------------------------------------------------------------------------
 
--- select * from v_programation_details
-create or replace view v_programation_details as
+-- select * from v_programming_details
+drop view if exists v_programming_details;
+create view v_programming_details as
 select
-pro.company_id, pro.date, regime_id,
+pro.company_id, pro.date,
 prof.id professional_id, prof.fullname as professional_fullname, 
 prof.profession as professional_profession, prof.code as professional_code,
-reg.id as regimen_id, reg.descrip as regime_descrip,
+reg.id as regime_id, reg.descrip as regime_descrip,
 foty.id as food_type_id, foty.descrip as food_type_descrip,
 pre.id as preparation_id, pre.descrip as preparation_descrip,
 foo.id as food_id, foo.descrip as food_descrip,
-pred.amount, pred.unit_id,
-uni.type as unit_type,
+prod.portions, pred.amount, pred.unit_id,
+pred.unit_type,
 unit_convert_to_min(pred.amount, pred.unit_id) as amount_min,
-if(uni.type=2, 'g', if(uni.type=3,'ml', 'u')) as unit_abrev_min,
+unit_type_symbol(pred.unit_type, 0) as unit_abrev_min,
 unit_convert_to_sta(pred.amount, pred.unit_id) as amount_sta,
-if(uni.type=2, 'kg', if(uni.type=3,'l', 'u')) as unit_abrev_sta
+unit_type_symbol(pred.unit_type, 1) as unit_abrev_sta
 from  programming_details as prod
-left join preparation_details as pred on prod.preparation_id = pred.preparation_id
+left join preparation_details as pred on pred.preparation_id = prod.preparation_id and pred.deleted_at is null
 left join programmings as pro on pro.id = prod.programming_id
 left join preparations as pre on pre.id = pred.preparation_id
 left join foods as foo on foo.id = pred.food_id
 left join food_types as foty on foty.id = pro.food_type_id
 left join regimes as reg on reg.id = pro.regime_id
 left join professionals as prof on prof.id = pro.professional_id
-left join units as uni on uni.id = pred.unit_id
+where prod.deleted_at is null
+-- ------------------------------------------------------------------------------------------------------------
 
-
------------------------------------------------------------------------------------------------------
-create or replace view v_preparations as
+-- select * from v_preparation_details
+drop view if exists v_preparation_details;
+create view v_preparation_details as
 select
 pre.id, pre.company_id, preparation_type_id,
 pre.id preparation_id, pre.descrip as preparation_descrip,
@@ -48,9 +52,12 @@ left join preparations as pre on pre.id = pred.preparation_id
 left join foods as foo on foo.id = pred.food_id
 left join nutrients as nut on nut.food_id = foo.id
 left join units as uni on uni.id = pred.unit_id
--- select * from v_preparations
----------------------------------------------------------------------------------------------------
-create or replace view v_preparation_nutrients as
+where pred.deleted_at is null
+-- ------------------------------------------------------------------------------------------------------------
+
+-- select * from v_preparation_nutrients
+drop view if exists v_preparation_nutrients;
+create view v_preparation_nutrients as
 select
 vpre.*,
 (select three_rule(nut.grams, nut.energy_kcal, vpre.amount_min)) AS energy_kcal,
@@ -96,11 +103,11 @@ vpre.*,
 (select three_rule(nut.grams, nut.arsenic_ug, vpre.amount_min)) AS arsenic_ug,
 (select three_rule(nut.grams, nut.dha_mg, vpre.amount_min)) AS dha_mg,
 (select three_rule(nut.grams, nut.ara_mg, vpre.amount_min)) AS ara_mg
-from v_preparations AS vpre
-left join nutrients as nut on nut.food_id = vpre.food_id
--- select * from v_preparation_nutrients
+from v_preparation_details AS vpre
+left join nutrients as nut on nut.food_id = vpre.food_id;
+-- ------------------------------------------------------------------------------------------------------------
 
-------------------------------------------------------------------------------------------
+-- select * from v_programming_nutrients
 create or replace view v_programming_nutrients as
 select
 vpro.*,
@@ -147,6 +154,6 @@ vpro.*,
 (select three_rule(nut.grams, nut.arsenic_ug, vpro.amount_min)) AS arsenic_ug,
 (select three_rule(nut.grams, nut.dha_mg, vpro.amount_min)) AS dha_mg,
 (select three_rule(nut.grams, nut.ara_mg, vpro.amount_min)) AS ara_mg
- from v_programmings as vpro
- left join nutrients as nut on nut.food_id = vpro.food_id
--- select * from v_programming_nutrients
+ from v_programming_details as vpro
+ left join nutrients as nut on nut.food_id = vpro.food_id;
+-- ------------------------------------------------------------------------------------------------------------

@@ -27,3 +27,14 @@ end;
 -- select get_item_stock(2, 0)
 -------------------------------------------------------------------------
 
+drop function if exists unit_type_symbol;
+create function unit_type_symbol( unitType int, symbolMin int)
+returns varchar(10)
+begin
+	if symbolMin=0 then
+		return if(unitType=1, 'u', if(unitType=2, 'g', if(unitType=3,'ml', 'x')));
+	else
+		return if(unitType=1, 'u', if(unitType=2, 'kg', if(unitType=3,'l', 'x')));
+	end if;
+end;
+
