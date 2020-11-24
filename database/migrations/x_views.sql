@@ -1,10 +1,12 @@
 -- select * from companies
-create or replace view companies as
+drop view if exists companies;
+create view companies as
 select id_almacen as id, nombre as descrip, IF(estado=1, NULL, 0) as deleted_at from almacen;
 -- ------------------------------------------------------------------------------------------------------------
 
 -- select * from foods
-create or replace view foods as
+drop view if exists foods;
+create view foods as
 select id_insumo as id, nombre as descrip, 1 as food_group_id, if(estado=1,null, 0) as deleted_at from insumo;
 -- ------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +35,7 @@ left join foods as foo on foo.id = pred.food_id
 left join food_types as foty on foty.id = pro.food_type_id
 left join regimes as reg on reg.id = pro.regime_id
 left join professionals as prof on prof.id = pro.professional_id
-where prod.deleted_at is null
+where prod.deleted_at is null;
 -- ------------------------------------------------------------------------------------------------------------
 
 -- select * from v_preparation_details
@@ -52,7 +54,7 @@ left join preparations as pre on pre.id = pred.preparation_id
 left join foods as foo on foo.id = pred.food_id
 left join nutrients as nut on nut.food_id = foo.id
 left join units as uni on uni.id = pred.unit_id
-where pred.deleted_at is null
+where pred.deleted_at is null;
 -- ------------------------------------------------------------------------------------------------------------
 
 -- select * from v_preparation_nutrients

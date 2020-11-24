@@ -8,11 +8,12 @@ begin
 	and preparation_id=preparationId;
 end //
 DELIMITER ;
-call get_preparation_nutrients(1, 4464);
-----------------------------------------------------------------------------------
+-- call get_preparation_nutrients(1, 4464);
+-- --------------------------------------------------------------------------------
 
 DELIMITER //
-create or replace procedure list_programming_nutrients(
+drop procedure if exists get_preparation_nutrients;
+create procedure list_programming_nutrients(
 companyId int, dateFrom date, dateTo date, regimeId int, foodTypeId int)
 begin
 	select * from v_programming_nutrients
@@ -23,8 +24,8 @@ begin
 	and food_type_id = foodTypeId;
 end //
 DELIMITER ;
-call list_programming_nutrients(1, '2020-11-21', '2020-11-21', 1014, 10)
-----------------------------------------------------------------------------------
+-- call list_programming_nutrients(1, '2020-11-21', '2020-11-21', 1014, 10);
+-- --------------------------------------------------------------------------------
 
 DELIMITER //
 drop procedure if exists get_detailed_orders;
@@ -48,8 +49,8 @@ begin
 	deallocate prepare stmt;
 end //
 DELIMITER ;
--- call get_detailed_orders(2, '2020-11-16', '2020-11-18', 0, 0)
---------------------------------------------------------------------------
+-- call get_detailed_orders(2, '2020-11-16', '2020-11-18', 0, 0);
+-- ------------------------------------------------------------------------
 
 DELIMITER //
 drop procedure if exists get_consolided_orders;
@@ -73,8 +74,8 @@ begin
 	deallocate prepare stmt;
 end //
 DELIMITER ;
--- call get_consolided_orders(2, '2020-11-16', '2020-11-18', 0, 0)
---------------------------------------------------------------------------
+-- call get_consolided_orders(2, '2020-11-16', '2020-11-18', 0, 0);
+-- ------------------------------------------------------------------------
 DELIMITER //
 drop procedure if exists get_stocked_consolided_orders;
 create procedure get_stocked_consolided_orders(
@@ -98,5 +99,5 @@ begin
 	deallocate prepare stmt;
 end //
 DELIMITER ;
--- call get_stocked_consolided_orders(1, '2020-11-22', '2020-11-22', 0, 0)
---------------------------------------------------------------------------
+-- call get_stocked_consolided_orders(1, '2020-11-22', '2020-11-22', 0, 0);
+-- ------------------------------------------------------------------------
