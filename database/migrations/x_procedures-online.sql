@@ -11,8 +11,8 @@ DELIMITER ;
 -- --------------------------------------------------------------------------------
 
 DELIMITER //
-drop procedure if exists get_preparation_nutrients;
-create procedure list_programming_nutrients(
+drop procedure if exists get_programming_nutrients;
+create procedure get_programming_nutrients(
 companyId int, dateFrom date, dateTo date, regimeId int, foodTypeId int)
 begin
 	select * from v_programming_nutrients
@@ -23,7 +23,7 @@ begin
 	and food_type_id = foodTypeId;
 end //
 DELIMITER ;
--- call list_programming_nutrients(1, '2020-11-21', '2020-11-21', 1014, 10);
+-- call get_programming_nutrients(1, '2020-11-21', '2020-11-21', 1014, 10);
 -- --------------------------------------------------------------------------------
 
 DELIMITER //
@@ -195,3 +195,38 @@ end //
 DELIMITER ;
 -- call get_stocked_consolided_orders(1, '2020-11-23', '2020-11-23', 1013, 9);
 -- ------------------------------------------------------------------------
+
+
+DELIMITER //
+drop procedure if exists get_adecuacy;
+create procedure get_adecuacy( companyId int, dateFrom date, dateTo date, regimeId int, foodTypeId int)
+begin
+	drop temporary table if exists tmp;
+	create temporary table tmp (descrip varchar(20), amount decimal(16,6) );
+	
+	insert into tmp (descrip, amount)
+	select 'Proteinas' as descrip, sum(proteinins_g) as amount
+	from v_programming_nutrients
+	where company_id = companyId
+	and date >= dateFrom
+	and date <= dateTo;
+	
+	insert into tmp (descrip, amount)
+	select 'Carbohidratos' as descrip, sum(total_carbohydrates_g) as amount
+	from v_programming_nutrients
+	where company_id = companyId
+	and date >= dateFrom
+	and date <= dateTo;
+	
+	insert into tmp (descrip, amount)
+	select 'Grasas' as descrip, sum(saturated_fat_g + trans_fat_g) as amount
+	from v_programming_nutrients
+	where company_id = companyId
+	and date >= dateFrom
+	and date <= dateTo;
+
+	select * from tmp;
+	
+end //
+DELIMITER ;
+-- call get_adecuacy(1, '2020-11-18', '2020-11-18', 1013, 9)
