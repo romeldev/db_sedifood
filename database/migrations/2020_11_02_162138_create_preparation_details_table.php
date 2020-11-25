@@ -15,11 +15,13 @@ class CreatePreparationDetailsTable extends Migration
     {
         Schema::create('preparation_details', function (Blueprint $table) {
             $table->id();
-            $table->decimal('amount');
             $table->foreignId('preparation_id')->constrained('preparations');
             $table->foreignId('food_id');
             $table->foreignId('unit_id')->constrained('units');
             $table->integer('unit_type');
+            $table->decimal('amount', 16, 6)->default(0);
+            // $table->decimal('amount_min', 16, 6)->default(0);
+            // $table->decimal('amount_max', 16, 6)->default(0);
             $table->softDeletes();
         });
     }

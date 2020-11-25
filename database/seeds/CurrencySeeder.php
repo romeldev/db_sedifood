@@ -20,8 +20,8 @@ class CurrencySeeder extends Seeder
     public function data()
     {
         return [
-            [ 'id' => 1, 'descrip' => 'NUEVOS SOLES' , 'symbol' => 'S/. '],
-            [ 'id' => 2, 'descrip' => 'DÓLAR AMERICANO' , 'symbol' => '$   '],
+            [ 'id' => 1, 'descrip' => 'NUEVOS SOLES' , 'symbol' => 'S/.'],
+            [ 'id' => 2, 'descrip' => 'DÓLAR AMERICANO' , 'symbol' => '$'],
         ];
     }
 }

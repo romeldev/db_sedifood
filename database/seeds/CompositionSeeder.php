@@ -21,13 +21,13 @@ class CompositionSeeder extends Seeder
     {
         return [
             [ 'id' => 1, 'descrip' => 'TABLAS PERUANAS DE COMPOSICION 2017' ],
-            [ 'id' => 2, 'descrip' => 'ALIMENTOS CHILENOS' ],
-            [ 'id' => 3, 'descrip' => 'ALIMENTOS AMERICA LATINA' ],
-            [ 'id' => 4, 'descrip' => 'ALIMENTOS INDUSTRIALIZADOS INAN' ],
-            [ 'id' => 5, 'descrip' => 'PRODUCTOR' ],
-            [ 'id' => 6, 'descrip' => 'TABLAS AUXILIARES INS.' ],
-            [ 'id' => 7, 'descrip' => 'TABLAS DE METALES PESADOS' ],
-            [ 'id' => 8, 'descrip' => 'TABLA ALIMENTOS TRAZAS' ],
+            // [ 'id' => 2, 'descrip' => 'ALIMENTOS CHILENOS' ],
+            // [ 'id' => 3, 'descrip' => 'ALIMENTOS AMERICA LATINA' ],
+            // [ 'id' => 4, 'descrip' => 'ALIMENTOS INDUSTRIALIZADOS INAN' ],
+            // [ 'id' => 5, 'descrip' => 'PRODUCTOR' ],
+            // [ 'id' => 6, 'descrip' => 'TABLAS AUXILIARES INS.' ],
+            // [ 'id' => 7, 'descrip' => 'TABLAS DE METALES PESADOS' ],
+            // [ 'id' => 8, 'descrip' => 'TABLA ALIMENTOS TRAZAS' ],
         ];
     }
 }

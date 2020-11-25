@@ -22,13 +22,13 @@ class RegimeSeeder extends Seeder
         return [
             [ 'id' => 1013, 'descrip' => 'NORMAL' , 'company_id' => 1],
             [ 'id' => 1014, 'descrip' => 'DIETA' , 'company_id' => 1],
-            [ 'id' => 1015, 'descrip' => 'NORMAL' , 'company_id' => 2],
-            [ 'id' => 1016, 'descrip' => 'HIPOCALORICO' , 'company_id' => 1],
-            [ 'id' => 1017, 'descrip' => 'DIETA COMPLETA' , 'company_id' =>1],
-            [ 'id' => 1018, 'descrip' => 'HIETA HIPOGRASA' , 'company_id' => 2],
-            [ 'id' => 1019, 'descrip' => 'NORMAL' , 'company_id' => 3],
-            [ 'id' => 1020, 'descrip' => 'COMPLETAS' , 'company_id' => 3],
-            [ 'id' => 1021, 'descrip' => 'BLANDAS' , 'company_id' => 3],
+            // [ 'id' => 1015, 'descrip' => 'NORMAL' , 'company_id' => 2],
+            // [ 'id' => 1016, 'descrip' => 'HIPOCALORICO' , 'company_id' => 1],
+            // [ 'id' => 1017, 'descrip' => 'DIETA COMPLETA' , 'company_id' =>1],
+            // [ 'id' => 1018, 'descrip' => 'HIETA HIPOGRASA' , 'company_id' => 2],
+            // [ 'id' => 1019, 'descrip' => 'NORMAL' , 'company_id' => 3],
+            // [ 'id' => 1020, 'descrip' => 'COMPLETAS' , 'company_id' => 3],
+            // [ 'id' => 1021, 'descrip' => 'BLANDAS' , 'company_id' => 3],
         ];
     }
 }

@@ -17,7 +17,20 @@ class PreparationTypeSeeder extends Seeder
         PreparationType::insert($this->data());
     }
 
+    
     public function data()
+    {
+        return [
+            [ 'id' => 1, 'descrip' => 'ENTRADAS' ],
+            [ 'id' => 2, 'descrip' => 'SOPAS' ],
+            [ 'id' => 3, 'descrip' => 'PLATOS DE FONDO' ],
+            [ 'id' => 4, 'descrip' => 'REFRESCOS' ],
+            [ 'id' => 5, 'descrip' => 'GUARNICIONES' ],
+            [ 'id' => 6, 'descrip' => 'SANDWICHS' ],
+        ];
+    }
+
+    public function data2()
     {
         return [
             [ 'id' => 1, 'descrip' => 'JUGOS' ],

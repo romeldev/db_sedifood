@@ -19,13 +19,13 @@ class FoodTypeSeeder extends Seeder
 
     public function data() {
         return [
-            [ 'id' => 8, 'descrip' => 'DESAYUNO' ],
-            [ 'id' => 9, 'descrip' => 'ALMUERZO' ],
-            [ 'id' => 10, 'descrip' => 'COMIDA' ],
-            [ 'id' => 11, 'descrip' => 'CENA' ],
-            [ 'id' => 12, 'descrip' => 'MEDIA MAÑANA' ],
-            [ 'id' => 13, 'descrip' => 'MEDIA TARDE' ],
-            [ 'id' => 14, 'descrip' => 'ADICIONALES' ],
+            [ 'id' => 1, 'descrip' => 'DESAYUNO' ],
+            [ 'id' => 2, 'descrip' => 'ALMUERZO' ],
+            [ 'id' => 3, 'descrip' => 'CENA' ],
+            // [ 'id' => 4, 'descrip' => 'COMIDA' ],
+            // [ 'id' => 5, 'descrip' => 'MEDIA MAÑANA' ],
+            // [ 'id' => 6, 'descrip' => 'MEDIA TARDE' ],
+            // [ 'id' => 7, 'descrip' => 'ADICIONALES' ],
         ];
     }
 }
