@@ -23,9 +23,9 @@ pre.id as preparation_id, pre.descrip as preparation_descrip,
 foo.id as food_id, foo.descrip as food_descrip,
 prod.portions, pred.amount, pred.unit_id,
 pred.unit_type,
-unit_convert_to_min(pred.amount, pred.unit_id) as amount_min,
+pred.amount_m as amount_min,
 unit_type_symbol(pred.unit_type, 0) as unit_abrev_min,
-unit_convert_to_sta(pred.amount, pred.unit_id) as amount_sta,
+pred.amount_s as amount_sta,
 unit_type_symbol(pred.unit_type, 1) as unit_abrev_sta
 from  programming_details as prod
 left join preparation_details as pred on pred.preparation_id = prod.preparation_id and pred.deleted_at is null
@@ -47,8 +47,8 @@ pre.id preparation_id, pre.descrip as preparation_descrip,
 foo.id as food_id, foo.descrip as food_descrip,
 pred.amount amount, pred.unit_id,
 uni.type as unit_type, uni.abrev as unit_abrev,
-unit_convert_to_min(pred.amount, pred.unit_id) as amount_min,
-if(uni.type=2, 'g', if(uni.type=3,'ml', 'g')) as unit_abrev_min
+pred.amount_m as amount_min,
+unit_type_symbol(pred.unit_type, 0) as unit_abrev_min
 from preparation_details as pred
 left join preparations as pre on pre.id = pred.preparation_id
 left join foods as foo on foo.id = pred.food_id

@@ -20,8 +20,8 @@ class CreatePreparationDetailsTable extends Migration
             $table->foreignId('unit_id')->constrained('units');
             $table->integer('unit_type');
             $table->decimal('amount', 16, 6)->default(0);
-            // $table->decimal('amount_min', 16, 6)->default(0);
-            // $table->decimal('amount_max', 16, 6)->default(0);
+            $table->decimal('amount_m', 16, 6)->default(0);
+            $table->decimal('amount_s', 16, 6)->default(0);
             $table->softDeletes();
         });
     }
