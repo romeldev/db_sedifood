@@ -16,11 +16,13 @@ class CreateProgrammingsTable extends Migration
         Schema::create('programmings', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->foreignId('company_id');
+            $table->integer('company_id');
             $table->foreignId('professional_id')->constrained('professionals');
             $table->foreignId('regime_id')->constrained('regimes');
             $table->foreignId('food_type_id')->constrained('food_types');
             $table->softDeletes();
+
+            $table->foreign('company_id')->references('id_almacen')->on('almacen');
         });
     }
 

@@ -52,13 +52,13 @@ class MenuSeeder extends Seeder
                 'view' => null,
                 'menu_id' => null,
                 'items' => [
-                    [
-                        'order' => 1,
-                        'label' => 'Tipo de tabla de composicion',
-                        'icon' => 'menu_item',
-                        'view' => 'CompositionView',
-                        'menu_id' => null,
-                    ],
+                    // [
+                    //     'order' => 1,
+                    //     'label' => 'Tipo de tabla de composicion',
+                    //     'icon' => 'menu_item',
+                    //     'view' => 'CompositionView',
+                    //     'menu_id' => null,
+                    // ],
                     [
                         'order' => 2,
                         'label' => 'Tipo de Regimen',
@@ -94,13 +94,13 @@ class MenuSeeder extends Seeder
                         'view' => 'CurrencyView',
                         'menu_id' => null,
                     ],
-                    [
-                        'order' => 7,
-                        'label' => 'Compañia',
-                        'icon' => 'menu_item',
-                        'view' => 'CompanyView',
-                        'menu_id' => null,
-                    ],
+                    // [
+                    //     'order' => 7,
+                    //     'label' => 'Compañia',
+                    //     'icon' => 'menu_item',
+                    //     'view' => 'CompanyView',
+                    //     'menu_id' => null,
+                    // ],
                     [
                         'order' => 8,
                         'label' => 'Profesional',

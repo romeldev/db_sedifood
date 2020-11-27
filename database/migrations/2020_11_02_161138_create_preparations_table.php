@@ -17,8 +17,10 @@ class CreatePreparationsTable extends Migration
             $table->id();
             $table->string('descrip');
             $table->foreignId('preparation_type_id')->constrained('preparation_types');
-            $table->foreignId('company_id');
+            $table->integer('company_id');
             $table->softDeletes();
+
+            $table->foreign('company_id')->references('id_almacen')->on('almacen');
         });
     }
 

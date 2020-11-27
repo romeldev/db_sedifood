@@ -1,3 +1,20 @@
+drop function if exists is_food_used;
+create function is_food_used( foodId int )
+returns int
+begin
+    declare matches int default 0;
+		declare match1 int default 0;
+		declare match2 int default 0;
+		select count(*) into match1 from productos where id_insumo=foodId;
+		
+		if( matches=0) then
+			select count(*) into match2 from preparation_details where food_id=foodId and deleted_at is null;
+		end if;
+		
+    return match1+match2;
+end;
+-- -------------------------------------------------------------------------------------------------------
+
 drop function if exists three_rule;
 create function three_rule(nut_grams decimal(9,3), nut_value decimal(9,3), food_amount decimal(9,3) )
 returns decimal(9,3)
